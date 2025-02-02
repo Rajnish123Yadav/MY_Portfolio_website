@@ -1,0 +1,516 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .project {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      width: 300px;
+      transition: transform 0.3s;
+    }
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project h3 {
+      margin: 10px 0;
+    }
+    .project-buttons {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+    }
+    .project-buttons button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      font-size: 14px;
+    }
+    .project-buttons button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 600px) {
+      .project {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="projects-container">
+    <div class="project">
+      <img src="project1.jpg" alt="Project 1">
+      <h3>Project 1</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project2.jpg" alt="Project 2">
+      <h3>Project 2</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project3.jpg" alt="Project 3">
+      <h3>Project 3</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project4.jpg" alt="Project 4">
+      <h3>Project 4</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function makeResponsive() {
+      const projects = document.querySelectorAll('.project');
+      if (window.innerWidth < 600) {
+        projects.forEach(project => project.style.width = '90%');
+      } else {
+        projects.forEach(project => project.style.width = '300px');
+      }
+    }
+
+    window.addEventListener('resize', makeResponsive);
+    window.addEventListener('load', makeResponsive);
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .projects-container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+    }
+    .project {
+      min-width: 300px;
+      flex-shrink: 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project h3 {
+      margin: 10px 0;
+    }
+    .project-buttons {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+    }
+    .project-buttons button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      font-size: 14px;
+    }
+    .project-buttons button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 600px) {
+      .project img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="projects-container">
+    <div class="project">
+      <img src="project1.jpg" alt="Project 1">
+      <h3>Project 1</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project2.jpg" alt="Project 2">
+      <h3>Project 2</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project3.jpg" alt="Project 3">
+      <h3>Project 3</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project4.jpg" alt="Project 4">
+      <h3>Project 4</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function adjustProjectWidths() {
+      const projects = document.querySelectorAll('.project');
+      const containerWidth = document.querySelector('.projects-container').clientWidth;
+      const projectWidth = containerWidth / 4 - 20; // Adjust for gaps
+
+      projects.forEach(project => {
+        if (window.innerWidth < 600) {
+          project.style.minWidth = '90%';
+        } else {
+          project.style.minWidth = `${projectWidth}px`;
+        }
+      });
+    }
+
+    window.addEventListener('resize', adjustProjectWidths);
+    window.addEventListener('load', adjustProjectWidths);
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Project Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .projects-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .project {
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      margin: 0 10px;
+      transition: transform 0.3s ease, flex 0.3s ease;
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project h3 {
+      margin: 10px 0;
+    }
+
+    .project-buttons {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+    }
+
+    .project-buttons button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      font-size: 14px;
+    }
+
+    .project-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 900px) {
+      .projects-container {
+        flex-wrap: wrap;
+      }
+      .project {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .project img {
+        height: 150px;
+      }
+      .project {
+        flex: 1 1 100%; /* Full width for small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="projects-container">
+    <div class="project">
+      <img src="project1.jpg" alt="Project 1">
+      <h3>Project 1</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project2.jpg" alt="Project 2">
+      <h3>Project 2</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project3.jpg" alt="Project 3">
+      <h3>Project 3</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project4.jpg" alt="Project 4">
+      <h3>Project 4</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function adjustProjectLayout() {
+      const projects = document.querySelectorAll('.project');
+      const containerWidth = document.querySelector('.projects-container').offsetWidth;
+
+      if (window.innerWidth > 900) {
+        projects.forEach(project => project.style.flex = '1'); // Equal spacing for large screens
+      } else if (window.innerWidth > 600) {
+        projects.forEach(project => project.style.flex = '1 1 calc(50% - 20px)'); // Two projects per row
+      } else {
+        projects.forEach(project => project.style.flex = '1 1 100%'); // Full width for small screens
+      }
+    }
+
+    window.addEventListener('resize', adjustProjectLayout);
+    window.addEventListener('load', adjustProjectLayout);
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Project Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .project {
+      flex: 1 1 22%; /* Four items in a row */
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, flex 0.3s ease;
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project h3 {scroll-snap-align: ;
+      margin: 10px 0;
+    }
+
+    .project-buttons {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+    }
+
+    .project-buttons button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      font-size: 14px;
+    }
+
+    .project-buttons button:hover {
+      background-color: #0d934c;
+    }
+
+    @media (max-width: 1024px) {
+      .project {
+        flex: 1 1 1 1 24%; /* Two items per row */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .project {
+        flex: 1 1 100%; /* One item per row */
+      }
+      .project img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="projects-container">
+    <div class="project">
+      <img src="project1.jpg" alt="Project 1">
+      <h3>Project 1</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project2.jpg" alt="Project 2">
+      <h3>Project 2</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project3.jpg" alt="Project 3">
+      <h3>Project 3</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+    <div class="project">
+      <img src="project4.jpg" alt="Project 4">
+      <h3>Project 4</h3>
+      <div class="project-buttons">
+        <button>View</button>
+        <button>Details</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- <script>
+    function adjustLayout() {
+      const projects = document.querySelectorAll('.project');
+      if (window.innerWidth <= 600) {
+        projects.forEach(project => project.style.flex = '1 1 100%');
+      } else if (window.innerWidth <= 1024) {
+        projects.forEach(project => project.style.flex = '1 1 48%');
+      } else {
+        projects.forEach(project => project.style.flex = '1 1 22%');
+      }
+    }
+
+    window.addEventListener('resize', adjustLayout);
+    window.addEventListener('load', adjustLayout);
+  </script> -->
+</body>
+</html>
+
